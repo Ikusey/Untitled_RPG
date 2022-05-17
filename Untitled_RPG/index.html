@@ -1,0 +1,40 @@
+
+    <!doctype html>
+    <html>
+    <head>
+    <title>Untitled RPG</title>
+    <meta name="description" content="Why are you reading this">
+    <meta name="keywords" content="stop reading this">
+    </head>
+    <body>
+        <Label for="charname">Character Name:</Label>
+        <input type="text" id="charname" name="charname"><br><br>
+        <p id="health">Health: 100</p> <p id="damage">Damage: 0</p>
+        <p id="Ehealth">Enemy Health: 100</p> <p id="Edamage">Enemy Damage: 0</p>
+        <button type="button" onclick="attack()">Attack!</button>
+        
+        <script>
+        let x = Math.floor((Math.random() * 10) + 1)
+        let y = 100
+        let a = 100
+        let b = Math.floor((Math.random() * 10) + 1)
+        
+        function attack(){
+            x = Math.floor((Math.random() * 10) + 1)
+            b = Math.floor((Math.random() * 10) + 1)
+            y = y - b
+            a = a - x
+            document.getElementById("health").innerHTML = "Health: " + y
+            document.getElementById("damage").innerHTML = "Damage: " + x
+            document.getElementById("Ehealth").innerHTML = "Enemy Health: " + a
+            document.getElementById("Edamage").innerHTML = "Enemy Damage: " + b
+
+            if(a <= 0){
+                alert("You win!")
+            } else if(y <= 0){
+                alert("You Lose!")
+            }
+        }
+        </script>
+    </body>
+    </html>
