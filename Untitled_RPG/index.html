@@ -5,36 +5,22 @@
     <title>Untitled RPG</title>
     <meta name="description" content="Why are you reading this">
     <meta name="keywords" content="stop reading this">
+    <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <Label for="charname">Character Name:</Label>
-        <input type="text" id="charname" name="charname"><br><br>
-        <p id="health">Health: 100</p> <p id="damage">Damage: 0</p>
-        <p id="Ehealth">Enemy Health: 100</p> <p id="Edamage">Enemy Damage: 0</p>
-        <button type="button" onclick="attack()">Attack!</button>
-        
-        <script>
-        let x = Math.floor((Math.random() * 10) + 1)
-        let y = 100
-        let a = 100
-        let b = Math.floor((Math.random() * 10) + 1)
-        
-        function attack(){
-            x = Math.floor((Math.random() * 10) + 1)
-            b = Math.floor((Math.random() * 10) + 1)
-            y = y - b
-            a = a - x
-            document.getElementById("health").innerHTML = "Health: " + y
-            document.getElementById("damage").innerHTML = "Damage: " + x
-            document.getElementById("Ehealth").innerHTML = "Enemy Health: " + a
-            document.getElementById("Edamage").innerHTML = "Enemy Damage: " + b
+        <input type="text" id="charname" name="charname"><br>
 
-            if(a <= 0){
-                alert("You win!")
-            } else if(y <= 0){
-                alert("You Lose!")
-            }
-        }
-        </script>
+        <p id="health">Health: 100</p>
+        <p id="damage">Damage: 0</p>
+        <p id="Ehealth">Enemy Health: 100</p> 
+        <p id="Edamage">Enemy Damage: 0</p>
+
+        <button type="button" onclick="attack()">Attack!</button>
+        <button type="button" onclick="stun()">Stun!</button>
+        <button type="button" onclick="heal()">Heal!</button>
+        <button type="button" onclick="reset()">Reset!</button>
+        
+        <script src="js/index.js"></script>
     </body>
     </html>
