@@ -9,18 +9,62 @@
     </head>
     <body>
         <Label for="charname">Character Name:</Label>
-        <input type="text" id="charname" name="charname"><br>
+        <input type="text" id="charname" name="charname">
+        
+        <table id="attributes">
+            <tr>
+                <th><button type="button" onclick="decrease('strength')">-</button></th>
+                <th><Label >Strength: </Label></th>
+                <th><label id="strength">0</label></th>
+                <th><button type="button" onclick="increase('strength')">+</button></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="decrease('defense')">-</button></th>
+                <th><Label >Defense: </Label></th>
+                <th><label id="defense">0</label></th>
+                <th><button type="button" onclick="increase('defense')">+</button></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="decrease('constitution')">-</button></th>
+                <th><Label>Constitution: </Label></th>
+                <th><label id="constitution">0</label></th>
+                <th><button type="button" onclick="increase('constitution')">+</button></th>
+            </tr>
+            <tr id="value">
+                <th><Label>Attribute Points: </Label></th>
+                <th><label id="points">0</label></th>
+            </tr>
+        </table>
 
         <p id="health">Health: 100</p>
         <p id="damage">Damage: 0</p>
+        <br>
+
+        <table id="attributes">
+            <tr>
+                <th><Label >Enemy Strength: </Label></th>
+                <th><label id="strengthE">0</label></th>
+            </tr>
+            <tr>
+                <th><Label >Enemy Defense: </Label></th>
+                <th><label id="defenseE">0</label></th>
+            </tr>
+            <tr>
+                <th><Label>Enemy Constitution: </Label></th>
+                <th><label id="constitutionE">0</label></th>
+            </tr>
+        </table>
+
+        <Label id="enemy">Enemy: Goblin</Label>
         <p id="Ehealth">Enemy Health: 100</p> 
         <p id="Edamage">Enemy Damage: 0</p>
+        <div id="buttons">
+            <button type="button" onclick="attack()">Attack!</button>
+            <button type="button" onclick="stun()">Stun!</button>
+            <button type="button" onclick="heal()">Heal!</button>
+            <button type="button" onclick="newFight()">New Fight!</button>
+        </div>
 
-        <button type="button" onclick="attack()">Attack!</button>
-        <button type="button" onclick="stun()">Stun!</button>
-        <button type="button" onclick="heal()">Heal!</button>
-        <button type="button" onclick="reset()">Reset!</button>
-        
         <script src="js/index.js"></script>
     </body>
     </html>
