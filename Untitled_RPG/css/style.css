@@ -1,9 +1,17 @@
 #attributes{
-    width: 200px;
+    width: 50%;
     float:right;
 }
 
 #buttons{
-    width: 300px;
+    width: 40%;
     margin: auto;
+}
+#combat{
+    width: 60%;
+    margin: auto;
+    padding-top: 5%;
+}
+#button{
+    font-size: 1em;
 }

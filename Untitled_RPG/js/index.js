@@ -6,7 +6,9 @@ let countS = 0
 let countH = 0
 let strength = 0, defense = 0, constitution = 0
 let strengthE = 0, defenseE = 0, constitutionE = 0
-let points = 0
+let points = 3
+let coins = 0
+let healthPots = 0
 const Goblin = {name: "Goblin", strength: 0, defense: 0, constitution: 0}
 const Bandit = {name: "Bandit", strength: 1, defense: 1, constitution: 1}
 const Orc = {name: "Orc", strength: 2, defense: 2, constitution: 2}
@@ -14,6 +16,9 @@ const Troll = {name: "Troll", strength: 3, defense: 3, constitution: 3}
 const Ogre = {name: "Ogre", strength: 4, defense: 4, constitution: 4}
 const enemies = [Goblin, Bandit, Orc, Troll, Ogre]
 let currentEnemy = Goblin.name
+let hasSword = false
+let hasShield = false
+let hasArmor = false
 
  function attack(){
      x = Math.floor((Math.random() * 10) + 1) + strength - currentEnemy.defense
@@ -122,6 +127,70 @@ function increase(attribute){
 }
 }
 
+function buySword(){
+  if(coins >= 5 && hasSword == false){
+    strength = strength + 3
+    document.getElementById("sword").innerHTML = "[x]"
+    document.getElementById("strength").innerHTML = strength
+    hasSword = true
+  }else if(coins < 5 && hasSword == false){
+    alert("Not enough coins!")
+  }else if(hasSword == true){
+    alert("You already have a sword!")
+  }
+
+}
+
+function buyShield(){
+  if(coins >= 5 && hasSword == false){
+    defense = defense + 3
+    document.getElementById("shield").innerHTML = "[x]"
+    document.getElementById("defense").innerHTML = defense
+    hasShield = true
+  }else if(coins < 5 && hasShield == false){
+    alert("Not enough coins!")
+  }else if(hasShield == true){
+    alert("You already have a shield!")
+  }
+}
+
+function buyArmor(){
+  if(coins >= 5 && hasArmor == false){
+    constitution = constitution + 3
+    document.getElementById("armor").innerHTML = "[x]"
+    document.getElementById("constitution").innerHTML = constitution
+    hasArmor = true
+  }else if(coins < 5 && hasArmor == false){
+    alert("Not enough coins!")
+  }else if(hasArmor == true){
+    alert("You already have armor!")
+  }
+}
+
+function buyPotion(){
+  if(coins >= 2){
+    healthPots++
+    document.getElementById("potion").innerHTML = "[" + healthPots + "]"
+  }else if(coins < 2 ){
+    alert("Not enough coins!")
+}
+}
+
+function useHealthPot(){
+  if(healthPots >= 1 && y < 100){
+    y = y + 10
+    healthPots--
+    document.getElementById("potion").innerHTML = "[" + healthPots + "]"
+    document.getElementById("health").innerHTML = "Health: " + y
+  }else if(healthPots >= 1 && y >=100){
+    alert("Health is full!")
+  }else if(healthPots < 1 && y < 100){
+    alert("No health potions!")
+  }else if(healthPots < 1 && y >= 100){
+    alert("No health potions and health is full!")
+  }
+}
+
   function result(){
      document.getElementById("health").innerHTML = "Health: " + y
      document.getElementById("damage").innerHTML = "Damage: " + x
@@ -135,7 +204,9 @@ function increase(attribute){
      if(a <= 0 && y > 0){
       alert("You win!")
       points++
+      coins++
       document.getElementById("points").innerHTML = points
+      document.getElementById("coins").innerHTML = "Coins: " + coins
     } else if(y <= 0 && a > 0){
         alert("You Lose!")
        }else if(y <= 0 && a <= 0){

@@ -8,63 +8,90 @@
     <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <Label for="charname">Character Name:</Label>
-        <input type="text" id="charname" name="charname">
-        
-        <table id="attributes">
-            <tr>
-                <th><button type="button" onclick="decrease('strength')">-</button></th>
-                <th><Label >Strength: </Label></th>
-                <th><label id="strength">0</label></th>
-                <th><button type="button" onclick="increase('strength')">+</button></th>
-            </tr>
-            <tr>
-                <th><button type="button" onclick="decrease('defense')">-</button></th>
-                <th><Label >Defense: </Label></th>
-                <th><label id="defense">0</label></th>
-                <th><button type="button" onclick="increase('defense')">+</button></th>
-            </tr>
-            <tr>
-                <th><button type="button" onclick="decrease('constitution')">-</button></th>
-                <th><Label>Constitution: </Label></th>
-                <th><label id="constitution">0</label></th>
-                <th><button type="button" onclick="increase('constitution')">+</button></th>
-            </tr>
-            <tr id="value">
-                <th><Label>Attribute Points: </Label></th>
-                <th><label id="points">0</label></th>
-            </tr>
-        </table>
+        <div id="combat">
+            <Label for="charname">Character Name:</Label>
+            <input type="text" id="charname" name="charname">
+            
+            <table id="attributes">
+                <tr>
+                    <th><button id="button" type="button" onclick="decrease('strength')">-</button></th>
+                    <th><Label >Strength: </Label></th>
+                    <th><label id="strength">0</label></th>
+                    <th><button id="button" type="button" onclick="increase('strength')">+</button></th>
+                </tr>
+                <tr>
+                    <th><button id="button" type="button" onclick="decrease('defense')">-</button></th>
+                    <th><Label >Defense: </Label></th>
+                    <th><label id="defense">0</label></th>
+                    <th><button id="button" type="button" onclick="increase('defense')">+</button></th>
+                </tr>
+                <tr>
+                    <th><button id="button" type="button" onclick="decrease('constitution')">-</button></th>
+                    <th><Label>Constitution: </Label></th>
+                    <th><label id="constitution">0</label></th>
+                    <th><button id="button" type="button" onclick="increase('constitution')">+</button></th>
+                </tr>
+                <tr id="value">
+                    <th><Label>Attribute Points: </Label></th>
+                    <th><label id="points">3</label></th>
+                </tr>
+            </table>
 
-        <p id="health">Health: 100</p>
-        <p id="damage">Damage: 0</p>
-        <br>
+            <p id="health">Health: 100</p>
+            <p id="damage">Damage: 0</p>
+            <br>
 
-        <table id="attributes">
-            <tr>
-                <th><Label >Enemy Strength: </Label></th>
-                <th><label id="strengthE">0</label></th>
-            </tr>
-            <tr>
-                <th><Label >Enemy Defense: </Label></th>
-                <th><label id="defenseE">0</label></th>
-            </tr>
-            <tr>
-                <th><Label>Enemy Constitution: </Label></th>
-                <th><label id="constitutionE">0</label></th>
-            </tr>
-        </table>
+            <table id="attributes">
+                <tr>
+                    <th><Label >Enemy Strength: </Label></th>
+                    <th><label id="strengthE">0</label></th>
+                </tr>
+                <tr>
+                    <th><Label >Enemy Defense: </Label></th>
+                    <th><label id="defenseE">0</label></th>
+                </tr>
+                <tr>
+                    <th><Label>Enemy Constitution: </Label></th>
+                    <th><label id="constitutionE">0</label></th>
+                </tr>
+            </table>
 
-        <Label id="enemy">Enemy: Goblin</Label>
-        <p id="Ehealth">Enemy Health: 100</p> 
-        <p id="Edamage">Enemy Damage: 0</p>
-        <div id="buttons">
-            <button type="button" onclick="attack()">Attack!</button>
-            <button type="button" onclick="stun()">Stun!</button>
-            <button type="button" onclick="heal()">Heal!</button>
-            <button type="button" onclick="newFight()">New Fight!</button>
+            <Label id="enemy">Enemy: Goblin</Label>
+            <p id="Ehealth">Enemy Health: 100</p> 
+            <p id="Edamage">Enemy Damage: 0</p>
+            <div id="buttons">
+                <button id="button" type="button" onclick="attack()">Attack!</button>
+                <button id="button" type="button" onclick="stun()">Stun!</button>
+                <button id="button" type="button" onclick="heal()">Heal!</button>
+                <button id="button" type="button" onclick="newFight()">New Fight!</button>
+            </div>
+            <table>
+                <tr>
+                    <th><label id="coins">Coins: 0</label></th>
+                </tr>
+                <tr>
+                    <th><Label>Sword - 5 Coins</Label></th>
+                    <th><label id="sword">[ ]</label></th>
+                    <th><button id="button" type="button" onclick="buySword()">Buy</button></th>
+                </tr>
+                <tr>
+                    <th><Label>Shield - 5 Coins</Label></th>
+                    <th><label id="shield">[ ]</label></th>
+                    <th><button id="button" type="button" onclick="buyShield()">Buy</button></th>
+                </tr>
+                <tr>
+                    <th><Label>Armor - 5 Coins</Label></th>
+                    <th><label id="armor">[ ]</label></th>
+                    <th><button id="button" type="button" onclick="buyArmor()">Buy</button></th>
+                </tr>
+                <tr>
+                    <th><label>Health Potion - 2 Coins</label></th>
+                    <th><label id="potion">[0]</label></th>
+                    <th><button id="button" type="button" onclick="buyPotion()">Buy</button></th>
+                    <th><button id="button" type="button" onclick="useHealthPot()">Use</button></th>
+                </tr>
+            </table>
+            <script src="js/index.js"></script>
         </div>
-
-        <script src="js/index.js"></script>
     </body>
     </html>
