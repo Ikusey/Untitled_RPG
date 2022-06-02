@@ -1,5 +1,4 @@
 #attributes{
-    width: 50%;
     float:right;
 }
 
@@ -7,11 +6,23 @@
     width: 40%;
     margin: auto;
 }
+
 #combat{
-    width: 60%;
     margin: auto;
-    padding-top: 5%;
 }
+
 #button{
     font-size: 1em;
 }
+
+#description{
+    width: 50%;
+    float: right;
+}
+
+#shop{
+    width: 50%;
+    float: left;
+}
+
+

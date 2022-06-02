@@ -5,9 +5,10 @@
     <title>Untitled RPG</title>
     <meta name="description" content="Why are you reading this">
     <meta name="keywords" content="stop reading this">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+        <div id="game">
         <div id="combat">
             <Label for="charname">Character Name:</Label>
             <input type="text" id="charname" name="charname">
@@ -65,7 +66,7 @@
                 <button id="button" type="button" onclick="heal()">Heal!</button>
                 <button id="button" type="button" onclick="newFight()">New Fight!</button>
             </div>
-            <table>
+            <table id="shop">
                 <tr>
                     <th><label id="coins">Coins: 0</label></th>
                 </tr>
@@ -91,7 +92,19 @@
                     <th><button id="button" type="button" onclick="useHealthPot()">Use</button></th>
                 </tr>
             </table>
-            <script src="js/index.js"></script>
+            <div id="description">
+                <h3>
+                    Enemy Description: 
+                </h3>
+                <p id="enemyDescription">
+                    Goblins are small, black-hearted humanoids that lair in despoiled dungeons and 
+                    other dismal settings. Individually weak, they gather in large numbers to 
+                    torment other creatures.
+                </p>
+            </div>
+            
         </div>
+    </div>
+    <script src="js/index.js"></script>
     </body>
     </html>
