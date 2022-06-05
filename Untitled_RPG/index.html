@@ -11,7 +11,11 @@
         <div id="game">
         <div id="combat">
             <Label for="charname">Character Name:</Label>
-            <input type="text" id="charname" name="charname">
+            <input type="text" id="charname" name="charname"><br>
+
+            <label>Character Portrait(Max 100 kb.): </label>
+            <input type='file' id="file"/>
+            <img id="characterPortrait" src="images/chee.png">
             
             <table id="attributes">
                 <tr>
@@ -60,6 +64,7 @@
             <Label id="enemy">Enemy: Goblin</Label>
             <p id="Ehealth">Enemy Health: 100</p> 
             <p id="Edamage">Enemy Damage: 0</p>
+            <img id="enemyPortrait" src="images/goblin.png"><br>
             <div id="buttons">
                 <button id="button" type="button" onclick="attack()">Attack!</button>
                 <button id="button" type="button" onclick="stun()">Stun!</button>

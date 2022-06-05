@@ -1,9 +1,23 @@
+body{
+    padding-top: 5%;
+    background-color: black;
+}
+
+#game{
+    margin: auto;
+    background-color: darkcyan;
+    overflow: hidden;
+    width: 75%;
+    padding: 1%;
+    padding-bottom: 10%;
+}
+
 #attributes{
     float:right;
 }
 
 #buttons{
-    width: 40%;
+    width: 30%;
     margin: auto;
 }
 
@@ -25,4 +39,13 @@
     float: left;
 }
 
+#enemyPortrait{
+    display: block;
+    margin: auto;
+}
+
+#characterPortrait{
+    display: block;
+    margin: auto;
+}
 
